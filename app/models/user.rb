@@ -7,6 +7,8 @@ class User < ApplicationRecord
             dependent: :destroy
   has_many :comments, dependent: :destroy
 
+  enum role: {user: Settings.role.user, admin: Settings.role.admin}
+
   VALID_EMAIL_REGEX = Settings.regex.email
 
   validates :full_name, presence: true,
