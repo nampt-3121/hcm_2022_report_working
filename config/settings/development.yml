@@ -22,6 +22,7 @@ user:
 department:
   avatar_width: 400
   avatar_height: 300
+  per_page: 5
 
 role:
   user: 0

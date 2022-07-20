@@ -18,16 +18,20 @@ class Department < ApplicationRecord
 
   has_one_attached :avatar
 
-  before_save :downcase_name
+  scope :by_name, (lambda do |name|
+    where(["name LIKE (?)", "%#{name}%"]) if name.present?
+  end)
+
+  scope :by_description, (lambda do |description|
+    where(["description LIKE (?)", "%#{description}%"]) if description.present?
+  end)
 
   def display_avatar width = Settings.gravatar.width_default,
     height = Settings.gravatar.height_default
     avatar.variant resize_to_limit: [width, height]
   end
 
-  private
-
-  def downcase_name
-    name.downcase!
+  def add_user user
+    users << user
   end
 end

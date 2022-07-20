@@ -5,7 +5,9 @@ class DepartmentsController < ApplicationController
 
   def index; end
 
-  def show; end
+  def show
+    @pagy, @users = pagy @department.users, items: Settings.department.per_page
+  end
 
   def new
     @department = Department.new
@@ -62,8 +64,9 @@ class DepartmentsController < ApplicationController
   def filter_department
     return Department.all unless params[:filter]
 
-    @departments = User.by_name(params[:filter][:name_search])
-                       .by_description(params[:filter][:description_search])
+    @departments = Department
+                   .by_name(params[:filter][:name_search])
+                   .by_description(params[:filter][:description_search])
   end
 
   def find_department
