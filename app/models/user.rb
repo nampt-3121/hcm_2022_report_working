@@ -20,11 +20,28 @@ class User < ApplicationRecord
             uniqueness: true
 
   validates :password, presence: true,
-            length: {minimum: Settings.digits.length_6}
+            length: {minimum: Settings.digits.length_6},
+            allow_nil: true
+
+  validates :avatar,
+            content_type: {in: Settings.image.accept_format,
+                           message: I18n.t(".invalid_img_type")},
+            size: {less_than: Settings.image.max_size.megabytes,
+                   message: I18n.t(".invalid_img_size")}
 
   has_secure_password
 
+  has_one_attached :avatar
+
+  scope :by_email, ->(email){where email: email if email.present?}
+
+  scope :by_full_name, ->(name){where full_name: name if name.present?}
+
   before_save :downcase_email
+
+  def display_avatar
+    avatar.variant(resize_to_limit: Settings.image.size_500_500)
+  end
 
   private
 

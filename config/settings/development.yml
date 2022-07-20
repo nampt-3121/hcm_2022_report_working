@@ -18,3 +18,9 @@ user:
 role:
   user: 0
   admin: 1
+
+image:
+  max_size: 5
+  accept_format: ["image/jpeg", "image/gif", "image/png"]
+  accept_format_html: "image/jpeg,image/gif,image/png"
+  size_500_500: [50, 50]
