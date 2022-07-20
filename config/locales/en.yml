@@ -13,6 +13,7 @@ en:
   departments_list: "Departments list"
   something_went_wrong: "Something went wrong. Please try again later"
   not_logged: "Please Log In"
+  edit: "Edit"
   sessions:
     new:
       title: "Log in"
@@ -65,6 +66,10 @@ en:
     create:
       create_department_message: "Create department Successfully"
       create_department_error: "Create department Error"
+    edit:
+      title: "Edit Page"
+      welcome: "Edit Department"
+      submit: "Submit"
     update:
       edit_success_message: "Edit Successfully"
       edit_failure_message: "Edit Failure"
@@ -75,3 +80,6 @@ en:
       title: "New Department"
       submit: "Create department"
       welcome: "New Department"
+    show:
+      delete: "Delete"
+      delete_confirmation: "You sure?"
