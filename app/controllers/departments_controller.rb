@@ -6,7 +6,9 @@ class DepartmentsController < ApplicationController
 
   def index; end
 
-  def show; end
+  def show
+    @pagy, @users = pagy @department.users
+  end
 
   def new
     @department = Department.new
