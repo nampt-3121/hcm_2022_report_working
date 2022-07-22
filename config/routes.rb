@@ -6,10 +6,9 @@ Rails.application.routes.draw do
     delete "/logout" ,to: "sessions#destroy"
     resources :users
     resources :departments do
-      resources :report
+      resources :reports, only: :new
     end
-
+    resources :reports, only: %i(create update destroy)
     resources :relationships, only: %i(new create destroy update)
-    #http://localhost:3000/en/department/6/report/new
   end
 end
