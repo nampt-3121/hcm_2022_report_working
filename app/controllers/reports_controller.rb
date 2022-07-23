@@ -1,6 +1,6 @@
 class ReportsController < ApplicationController
-  before_action :find_department, only: %i(new create)
-  before_action :find_manager, only: %i(new create)
+  before_action :find_department, only: %i(new create edit)
+  before_action :find_manager, only: %i(new create edit)
 
   def index
     @relationship = Relationship.find_by department_id: params[:department_id], user_id: current_user.id
@@ -29,6 +29,31 @@ class ReportsController < ApplicationController
       flash.now[:danger] = t ".create_report_error"
       render :new
     end
+  end
+
+  def edit
+    @report = Report.find_by id: params[:id]
+  end
+
+  def update
+    @report = Report.find_by id: params[:id]
+    if @report.update(report_params)
+      flash[:success] = t ".edit_success_message"
+      redirect_to department_reports_path(@report.department_id)
+    else
+      flash.now[:danger] = t ".edit_failure_message"
+      render :edit
+    end
+  end
+
+  def destroy
+    @report = Report.find_by id: params[:id]
+    if @report.destroy
+      flash[:success] = t ".deleted_message"
+    else
+      flash[:danger] = t ".delete_failed_message"
+    end
+    redirect_to department_reports_path(@report.department_id)
   end
 
   private
