@@ -2,6 +2,19 @@ class ReportsController < ApplicationController
   before_action :find_department, only: %i(new create)
   before_action :find_manager, only: %i(new create)
 
+  def index
+    @relationship = Relationship.find_by department_id: params[:department_id], user_id: current_user.id
+    if @relationship&.manager? || current_user.admin?
+      @reports = Report.where :department_id => params[:department_id]
+    else
+      @reports = Report.where from_user_id: current_user.id
+    end
+  end
+
+  def show
+    @report = Report.find_by id: params[:id]
+  end
+
   def new
     @report = Report.new
   end
