@@ -13,6 +13,8 @@ class ReportsController < ApplicationController
 
   def show
     @report = Report.find_by id: params[:id]
+    @comments = Comment.where report_id: @report.id
+    @comment = @report.comments.build
   end
 
   def new
