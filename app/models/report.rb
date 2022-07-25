@@ -4,9 +4,6 @@ class Report < ApplicationRecord
   belongs_to :department
   has_many :comments, dependent: :destroy
 
-  delegate :full_name, to: :from_user
-  delegate :name, to: :department
-
   enum report_status: {unverifyed: 0, confirmed: 1}
 
   validates :report_date, presence: true,

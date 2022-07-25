@@ -16,6 +16,8 @@ en:
   not_admin: "You are not allowed to access this page"
   not_manager: "You are not allowed to access this page"
   edit: "Edit"
+  ownership_error: "Permission denied"
+  unverifyed_error: "Can not delete unverifyed report"
   sessions:
     new:
       title: "Log in"
@@ -134,6 +136,14 @@ en:
       create_report_error: "Create report failed"
       invalid_department: "Department not found"
       unprepared_manager: "Department does not have any managers"
+    edit:
+      submit: "Edit Report"
+    update:
+      edit_success_message: "Update Successfully"
+      edit_failure_message: "Update Failure"
+    destroy:
+      deleted_message: "Delete Successfully"
+      delete_failed_message: "Delete Failure"
     filter_form:
       id: "ID"
       name: "Name"
@@ -141,3 +151,7 @@ en:
       date_created: "Date Created"
       date_reported: "Date Reported"
       search: "Search"
+    view_report:
+      delete_confirmation: "Are you sure?"
+      edit: "Edit Report"
+      delete: "Delete Report"
