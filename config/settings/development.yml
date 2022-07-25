@@ -24,6 +24,9 @@ department:
   avatar_height: 300
   per_page: 5
 
+relationship:
+  per_page: 5
+
 role:
   user: 0
   admin: 1

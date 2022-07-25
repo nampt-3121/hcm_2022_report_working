@@ -37,4 +37,15 @@ class ApplicationController < ActionController::Base
     flash[:warning] = t "not_admin"
     redirect_to root_path
   end
+
+  def require_manager department_id
+    return if current_user.admin?
+
+    relationship = Relationship.find_by(user_id: current_user.id,
+                                        department_id: department_id)
+    return if relationship&.manager?
+
+    flash[:warning] = t "not_manager"
+    redirect_to root_path
+  end
 end
