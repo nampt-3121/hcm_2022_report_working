@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   def create
     if save_comment
       flash[:success] = t ".create_comment_message"
-      create_notify @comment.user_from.id, t("comment_notify"),
+      create_notify @comment.report.from_user.id, t("comment_notify"),
                     report_path(@comment.report.id)
     else
       flash.now[:danger] = t ".create_comment_error"

@@ -7,7 +7,9 @@ class ReportsController < ApplicationController
   before_action :check_ownership, only: %i(update destroy)
   before_action :require_unverifyed, only: %i(update destroy)
 
-  def index; end
+  def index
+    @filter = params[:filter]
+  end
 
   def show
     @comments = Comment.where report_id: @report.id
@@ -118,6 +120,7 @@ class ReportsController < ApplicationController
                        .by_name(filter[:name])
                        .by_created_at(filter[:date_created])
                        .by_report_date(filter[:date_reported])
+                       .by_status(filter[:status])
                        .sort_created_at
   end
 
@@ -125,7 +128,8 @@ class ReportsController < ApplicationController
     @reports = if @relationship&.manager? || current_user.admin?
                  Report.where department_id: params[:department_id]
                else
-                 Report.where from_user_id: current_user.id
+                 Report.where from_user_id: current_user.id,
+                              department_id: params[:department_id]
                end
     filter_report
   end

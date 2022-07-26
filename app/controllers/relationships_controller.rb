@@ -18,7 +18,7 @@ class RelationshipsController < ApplicationController
   def update
     role = params[:role]
     if @relationship.update(role_type: role)
-      create_notify @user.id, t("role_department"),
+      create_notify @relationship.user_id, t("role_department"),
                     department_path(@relationship.department.id)
       flash[:success] = t ".update_success"
     else

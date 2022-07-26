@@ -43,6 +43,10 @@ class Report < ApplicationRecord
     where(report_date: report_date) if report_date.present?
   end)
 
+  scope :by_status, (lambda do |status|
+    where(report_status: status) if status.present?
+  end)
+
   def approve action
     return unverifyed! if action.eql? Settings.report.unverifyed
 

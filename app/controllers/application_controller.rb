@@ -53,6 +53,6 @@ class ApplicationController < ActionController::Base
   def load_notifies
     return unless current_user
 
-    @notifies = Notify.where user_id: current_user.id
+    @notifies = Notify.where(user_id: current_user.id).recent
   end
 end
