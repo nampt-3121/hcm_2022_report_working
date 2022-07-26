@@ -1,6 +1,6 @@
 class ReportsController < ApplicationController
-  before_action :find_department, only: %i(new create edit)
-  before_action :find_manager, only: %i(new create edit)
+  before_action :find_department, only: %i(index new create edit update)
+  before_action :find_manager, only: %i(new create edit update)
   before_action :find_relationship, only: :index
   before_action :find_report, only: %i(show edit update destroy)
   before_action :paginate_reports, only: :index
@@ -9,7 +9,10 @@ class ReportsController < ApplicationController
 
   def index; end
 
-  def show; end
+  def show
+    @comments = Comment.where report_id: @report.id
+    @comment = @report.comments.build
+  end
 
   def new
     @report = Report.new
@@ -73,6 +76,8 @@ class ReportsController < ApplicationController
   end
 
   def find_relationship
+    return if current_user.admin?
+
     @relationship = Relationship.find_by department_id: params[:department_id],
                                          user_id: current_user.id
     return if @relationship.present?
