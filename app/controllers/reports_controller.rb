@@ -2,7 +2,7 @@ class ReportsController < ApplicationController
   before_action :find_department, only: %i(index new create edit update)
   before_action :find_manager, only: %i(new create edit update)
   before_action :find_relationship, only: :index
-  before_action :find_report, only: %i(show edit update destroy)
+  before_action :find_report, only: %i(show edit update destroy approve)
   before_action :paginate_reports, only: :index
   before_action :check_ownership, only: %i(update destroy)
   before_action :require_unverifyed, only: %i(update destroy)
@@ -49,6 +49,15 @@ class ReportsController < ApplicationController
       flash[:danger] = t ".delete_failed_message"
     end
     redirect_to department_reports_path(@report.department_id)
+  end
+
+  def approve
+    if @report.approve params[:status]
+      flash[:success] = t ".update_success"
+    else
+      flash[:danger] = t ".update_failure"
+    end
+    redirect_back(fallback_location: root_path)
   end
 
   private
