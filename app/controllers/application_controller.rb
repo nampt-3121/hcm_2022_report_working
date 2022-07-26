@@ -1,8 +1,9 @@
 class ApplicationController < ActionController::Base
   include Pagy::Backend
   include SessionsHelper
+  include NotifiesHelper
 
-  before_action :set_locale
+  before_action :set_locale, :load_notifies
 
   private
 
@@ -47,5 +48,11 @@ class ApplicationController < ActionController::Base
 
     flash[:warning] = t "not_manager"
     redirect_to root_path
+  end
+
+  def load_notifies
+    return unless current_user
+
+    @notifies = Notify.where user_id: current_user.id
   end
 end

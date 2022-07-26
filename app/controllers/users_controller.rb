@@ -20,6 +20,7 @@ class UsersController < ApplicationController
     @user = User.new user_params
     if @user.save
       save_avatar
+      create_notify @user.id, t("welecome_create"), user_path(@user)
       flash[:success] = t ".create_user_message"
       redirect_to root_url
     else
@@ -32,6 +33,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
+      create_notify @user.id, t("update_profile"), user_path(@user)
       flash[:success] = t ".edit_success_message"
       redirect_to @user
     else

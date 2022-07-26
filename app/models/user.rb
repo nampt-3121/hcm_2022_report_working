@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :report_receives, class_name: :Report, foreign_key: :to_user,
             dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :notifies, dependent: :destroy
 
   enum role: {normal: 0, admin: 1}
 

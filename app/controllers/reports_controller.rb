@@ -22,6 +22,8 @@ class ReportsController < ApplicationController
     @report = @department.reports.build report_params
     @report.from_user_id = current_user.id
     if @report.save
+      create_notify @report.to_user_id, t("to_report"),
+                    report_path(@report.id)
       flash[:success] = t ".create_report_message"
       redirect_to root_path
     else

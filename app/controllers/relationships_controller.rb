@@ -9,6 +9,8 @@ class RelationshipsController < ApplicationController
 
   def create
     @user.join_department @department
+    create_notify @user.id, t("join_department"),
+                  department_path(@department.id)
     flash[:success] = t ".success_message"
     redirect_back(fallback_location: root_path)
   end
@@ -16,6 +18,8 @@ class RelationshipsController < ApplicationController
   def update
     role = params[:role]
     if @relationship.update(role_type: role)
+      create_notify @user.id, t("role_department"),
+                    department_path(@relationship.department.id)
       flash[:success] = t ".update_success"
     else
       flash[:danger] = t ".update_failure"
