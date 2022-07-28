@@ -4,6 +4,9 @@ class Report < ApplicationRecord
   belongs_to :department
   has_many :comments, dependent: :destroy
 
+  accepts_nested_attributes_for :comments, allow_destroy: true,
+    reject_if: ->(attrs){attrs[:description].blank?}
+
   enum report_status: {unverifyed: 0, confirmed: 1}
 
   validates :report_date, presence: true,

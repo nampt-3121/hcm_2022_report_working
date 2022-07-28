@@ -18,6 +18,7 @@ class ReportsController < ApplicationController
 
   def new
     @report = Report.new
+    @report.comments.build
   end
 
   def create
@@ -67,8 +68,15 @@ class ReportsController < ApplicationController
   private
 
   def report_params
-    params.require(:report).permit(:report_date, :today_plan, :today_work,
-                                   :today_problem, :tomorow_plan, :to_user_id)
+    params[:report][:comments_attributes].each do |key, comment|
+      comment[:user_id] = current_user.id
+    end
+
+    params.require(:report).permit(
+      :report_date, :today_plan, :today_work,
+      :today_problem, :tomorow_plan, :to_user_id,
+      comments_attributes: [:report_id, :description, :user_id]
+    )
   end
 
   def find_department

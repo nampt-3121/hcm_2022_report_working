@@ -37,6 +37,8 @@ gem "mini_magick", "4.9.5"
 gem "faker", "2.1.2"
 
 gem "figaro"
+
+gem "cocoon"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 # Use Active Model has_secure_password

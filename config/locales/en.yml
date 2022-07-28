@@ -170,6 +170,10 @@ en:
     approve:
       update_success: "Update Success"
       update_failure: "Update Failure"
+    comment_fields:
+      your_comment: "Your Comment"
+      add_comment: "Add Comment"
+      remove_comment: "Remove Comment"
   comments:
     comment:
       edit: "Edit"
