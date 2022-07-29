@@ -17,4 +17,10 @@ Rails.application.routes.draw do
     resources :comments
     resources :notifies, only: :show
   end
+  resources :examples, only: :index do
+    get :buttons, :cards, :utilities_color, :utilities_border,
+        :utilities_animation, :utilities_other, :login, :register,
+        :forgot_password, :page_404, :blank, :charts, :tables,
+        on: :collection
+  end
 end
