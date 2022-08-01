@@ -17,6 +17,7 @@ class ReportsController < ApplicationController
 
   def new
     @report = Report.new
+    @report.comments.build
   end
 
   def create
@@ -62,6 +63,10 @@ class ReportsController < ApplicationController
   private
 
   def report_params
+    params[:report][:comments_attributes].each do |_key, comment|
+      comment[:user_id] = current_user.id
+    end
+
     params.require(:report).permit Report::UPDATEABLE_ATTRS
   end
 
