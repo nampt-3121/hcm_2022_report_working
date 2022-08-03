@@ -1,11 +1,13 @@
 class RelationshipsController < ApplicationController
-  before_action :find_department, only: %i(new create)
+  before_action :find_department, only: :create
   before_action :find_user, only: :create
   before_action :find_relationship, only: %i(update destroy)
   before_action :paginate_users, only: :new
   Pagy::DEFAULT[:items] = Settings.relationship.per_page
 
-  def new; end
+  def new
+    @departments = Department.sort_created_at
+  end
 
   def create
     @user.join_department @department
@@ -55,7 +57,6 @@ class RelationshipsController < ApplicationController
 
   def paginate_users
     @pagy, @users = pagy filter_user.includes([:avatar_attachment])
-                                    .not_in_department @department.id
   end
 
   def filter_user

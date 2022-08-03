@@ -34,6 +34,11 @@ import './shared/demo/chart-bar-demo'
 import './shared/demo/chart-pie-demo'
 
 require("@nathanvda/cocoon")
+import 'select2'
+
+$(document).ready(function() {
+  $("#department_id").select2();
+});
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
