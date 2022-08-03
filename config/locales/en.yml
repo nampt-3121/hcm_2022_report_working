@@ -39,6 +39,8 @@ en:
   logout_modal_content: "Select Logout below if you are ready to end your current session."
   cancel: "Cancel"
   hello: "Hello"
+  upload: "Upload"
+  choose_file: "Choose File"
   sessions:
     new:
       title: "Log in"
@@ -56,6 +58,7 @@ en:
     index:
       title: "Users List"
     new:
+      welcome: "Create new User"
       title: "New User"
       submit: "Create account"
     create:

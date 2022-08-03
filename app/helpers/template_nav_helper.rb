@@ -1,6 +1,6 @@
 module TemplateNavHelper
   def nav_context name, title, icon: "", active_link: false, &block
-    sanitize "<li class='nav-item #{'active' if active_link}'>
+    "<li class='nav-item #{'active' if active_link}'>
       <a class='nav-link #{'collapsed' unless active_link}'
         href='#' data-toggle='collapse'
         data-target='##{name}'
@@ -17,6 +17,6 @@ module TemplateNavHelper
           #{capture(&block)}
         </div>
       </div>
-    </li>"
+    </li>".html_safe
   end
 end
