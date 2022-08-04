@@ -1,4 +1,5 @@
 class RelationshipsController < ApplicationController
+  authorize_resource
   before_action :find_department, only: :create
   before_action :find_user, only: :create
   before_action :find_relationship, only: %i(update destroy)

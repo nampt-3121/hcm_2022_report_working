@@ -217,7 +217,7 @@ en:
   notifies:
     show:
       error_message: "Something went wrong"
-      error_access: "Cam not access this page"
+      error_access: "Can not access this page"
   devise:
     sessions:
       new:
