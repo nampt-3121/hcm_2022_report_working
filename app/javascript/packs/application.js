@@ -18,6 +18,11 @@ import '@fortawesome/fontawesome-free/js/all'
 import datatable from 'imports-loader?define=>false!datatables.net'
 import datatableBS4 from 'imports-loader?define=>false!datatables.net-bs4'
 import './shared/sb-admin-2'
+import './shared/select2'
+
+$(document).on('turbolinks:load', function() {
+  $(".js-example-basic-multiple").select2();
+});
 
 Rails.start()
 Turbolinks.start()
@@ -34,11 +39,6 @@ import './shared/demo/chart-bar-demo'
 import './shared/demo/chart-pie-demo'
 
 require("@nathanvda/cocoon")
-import 'select2'
-
-$(document).ready(function() {
-  $("#department_id").select2();
-});
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
