@@ -86,3 +86,4 @@ config/environments/*.local.yml
 /storage/*
 /config/application.yml
 /public/assets/*
+report_cron_log.log
