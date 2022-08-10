@@ -87,6 +87,7 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
+    chartkick (4.2.1)
     childprocess (4.1.0)
     chronic (0.10.2)
     cocoon (1.2.15)
@@ -156,6 +157,8 @@ GEM
       thor (>= 0.14.0, < 2)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    groupdate (6.1.0)
+      activesupport (>= 5.2)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     image_processing (1.9.3)
@@ -373,6 +376,7 @@ DEPENDENCIES
   byebug
   cancancan
   capybara (>= 2.15)
+  chartkick
   cocoon
   config
   csv
@@ -382,6 +386,7 @@ DEPENDENCIES
   factory_bot_rails
   faker (= 2.1.2)
   figaro
+  groupdate
   image_processing (= 1.9.3)
   jbuilder (~> 2.7)
   listen (~> 3.2)

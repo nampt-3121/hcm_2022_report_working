@@ -38,6 +38,7 @@ import './shared/demo/datatables-demo'
 import './shared/demo/chart-area-demo'
 import './shared/demo/chart-bar-demo'
 import './shared/demo/chart-pie-demo'
+import 'chartkick/chart.js'
 
 require("@nathanvda/cocoon")
 // Uncomment to copy all static images under ../images to the output folder and reference

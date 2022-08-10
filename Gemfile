@@ -51,6 +51,10 @@ gem "activerecord-import"
 gem "sidekiq"
 
 gem "whenever"
+
+gem "chartkick"
+
+gem "groupdate"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 # Use Active Model has_secure_password
