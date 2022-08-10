@@ -6,7 +6,7 @@ class Relationship < ApplicationRecord
   belongs_to :user
   belongs_to :department
 
-  before_create :notify
+  after_create :notify
 
   delegate :full_name, to: :user
 
@@ -25,7 +25,8 @@ class Relationship < ApplicationRecord
   private
 
   def notify
-    create_notify user_id, I18n.t("role_department"),
+    create_notify user_id, I18n.t("add_department",
+                                  department_name: department.name),
                   routes.department_path(id: department.id)
   end
 end
