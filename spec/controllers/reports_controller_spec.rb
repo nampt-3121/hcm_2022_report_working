@@ -285,7 +285,7 @@ RSpec.describe ReportsController, type: :controller do
     end
   end
 
-  describe "PATCH approve/:id" do
+  describe "PATCH update/:id" do
     it_behaves_like "not logged for other method" do
       before do
         patch :update, params: {

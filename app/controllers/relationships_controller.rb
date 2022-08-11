@@ -1,4 +1,5 @@
 class RelationshipsController < ApplicationController
+  before_action :authenticate_user!
   before_action :find_relationship, only: %i(update destroy)
   before_action :paginate_users, only: :new
   before_action :relationship_params, only: :create
@@ -14,7 +15,7 @@ class RelationshipsController < ApplicationController
                         relationship_params[:user_id]
 
     flash[:info] = t "autd_success"
-    redirect_back(fallback_location: root_path)
+    redirect_to new_relationship_path
   end
 
   def update
@@ -37,27 +38,13 @@ class RelationshipsController < ApplicationController
 
   private
 
-  def show_error message
-    flash[:danger] = message
-    redirect_to root_path
-  end
-
-  def find_department
-    require_manager params[:department_id]
-    @department = Department.find params[:department_id]
-  end
-
-  def find_user
-    @user = User.find params[:user_id]
-  end
-
   def find_relationship
     @relationship = Relationship.find params[:id]
     require_manager @relationship.department_id
   end
 
   def paginate_users
-    @filter = User.ransack(params[:filter])
+    @filter = User.sort_created_at.ransack(params[:filter])
     @pagy, @users = pagy @filter.result
   end
 

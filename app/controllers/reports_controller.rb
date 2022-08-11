@@ -1,4 +1,5 @@
 class ReportsController < ApplicationController
+  before_action :authenticate_user!
   authorize_resource
   before_action :find_department, except: %i(destroy new index)
   before_action :paginate_reports, only: :index

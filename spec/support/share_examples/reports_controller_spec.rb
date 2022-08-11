@@ -3,7 +3,7 @@ RSpec.shared_examples "not logged for get method" do |action, params|
     before {get action, params: params}
 
     it "redirect login page" do
-      expect(response).to redirect_to root_path
+      expect(response).to redirect_to "http://test.host/users/sign_in"
     end
   end
 end
@@ -11,7 +11,7 @@ end
 RSpec.shared_examples "not logged for other method" do
   context "when not login" do
     it "redirect login page" do
-      expect(response).to redirect_to root_path
+      expect(response).to redirect_to "http://test.host/users/sign_in"
     end
   end
 end
