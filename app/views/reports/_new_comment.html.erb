@@ -2,11 +2,11 @@
   <%= render "shared/error_messages", object: @comment %>
   <div class="form-inline">
     <div class="form-group">
-      <%= f.text_field :description, class: "form-control", placeholder: t(".your_comment") %>
+      <%= f.text_field :description, class: "form-control w-97", placeholder: t(".your_comment") %>
       <%= hidden_field_tag :report_id, @report.id %>
     </div>
     <div class="form-group">
-      <%= f.submit t(".add"), class: "btn btn-default" %>
+      <%= f.submit t(".add"), class: "btn btn-success" %>
     </div>
   </div>
 <% end %>

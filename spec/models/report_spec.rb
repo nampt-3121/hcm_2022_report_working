@@ -61,36 +61,8 @@ RSpec.describe Report, type: :model do
       expect(Report.sort_created_at.pluck(:id)).to eq([report_1.id, report_2.id, report_3.id, report_4.id, report_5.id])
     end
 
-    it "find by department" do
-      expect(Report.by_department(department.name).pluck(:id)).to eq([report_1.id, report_2.id, report_3.id, report_4.id])
-    end
-
-    it "find by name" do
-      expect(Report.by_name(user.full_name).pluck(:id)).to eq([report_1.id, report_2.id, report_3.id])
-    end
-
-    it "find by id" do
-      expect(Report.by_id(report_1.id).pluck(:id)).to eq([report_1.id])
-    end
-
-    it "find by created_at" do
-      expect(Report.by_created_at(report_2.created_at).pluck(:id)).to eq([report_2.id])
-    end
-
-    it "find by report_date" do
-      expect(Report.by_report_date(report_5.report_date).pluck(:id)).to eq([report_5.id])
-    end
-
-    it "find by for_manager" do
-      expect(Report.for_manager(department_2.id).pluck(:id)).to eq([report_5.id])
-    end
-
     it "find by for_employee" do
       expect(Report.for_employee(user_singe.id).pluck(:id)).to eq([report_4.id, report_5.id])
-    end
-
-    it "find by status" do
-      expect(Report.by_status(:confirmed).pluck(:id)).to eq([report_3.id])
     end
   end
 

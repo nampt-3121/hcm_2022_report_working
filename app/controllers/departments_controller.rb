@@ -3,7 +3,6 @@ class DepartmentsController < ApplicationController
   authorize_resource
   before_action :paginate_departments, only: :index
   before_action :find_department, except: %i(index new create)
-  Pagy::DEFAULT[:items] = Settings.department.per_page
 
   def index; end
 

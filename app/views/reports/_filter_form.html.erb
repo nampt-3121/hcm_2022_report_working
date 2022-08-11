@@ -27,7 +27,7 @@
           </div>
         </div>
         <%= filter.label :report_status, class: "mt-16" %>
-        <div class="input-group col-5">
+        <div class="pl-0 input-group col-5">
           <span class="input-group-addon"><i class="glyphicon glyphicon-edit"></i></span>
           <%= filter.select :report_status_eq, Report.report_statuses, {include_blank: true}, class: "form-control" %>
         </div>

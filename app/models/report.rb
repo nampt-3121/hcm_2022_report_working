@@ -9,8 +9,6 @@ class Report < ApplicationRecord
   belongs_to :department
   has_many :comments, dependent: :destroy
 
-  after_create :notify
-
   accepts_nested_attributes_for :comments, allow_destroy: true,
     reject_if: ->(attrs){attrs[:description].blank?}
 
@@ -35,16 +33,6 @@ class Report < ApplicationRecord
 
   scope :sort_created_at, ->{order :created_at}
 
-  scope :by_department, (lambda do |department_name|
-    if department_name.present?
-      Report.joins(:department).where("name LIKE (?)", "%#{department_name}%")
-    end
-  end)
-
-  scope :by_created_at, (lambda do |created_at|
-    where(created_at: created_at) if created_at.present?
-  end)
-
   scope :for_manager, (lambda do |department_id|
     where(department_id: department_id) if department_id
   end)
@@ -53,20 +41,9 @@ class Report < ApplicationRecord
     where(from_user_id: user_id) if user_id
   end)
 
-  scope :by_status, (lambda do |status|
-    where(report_status: status) if status
-  end)
-
   def approve action
     return unverifyed! if action.eql? Settings.report.unverifyed
 
     confirmed! if action.eql? Settings.report.confirmed
-  end
-
-  private
-
-  def notify
-    create_notify from_user_id, I18n.t("to_report"),
-                  routes.report_path(id: id)
   end
 end

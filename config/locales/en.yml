@@ -46,6 +46,7 @@ en:
   autd_success: "Add User To Department Success. Please check it work correctly!!!"
   autd_failure: "Add User To Department Failure. please try again !!!"
   remind_job_msg: "Let is create to day report of %{department_name}"
+  change_my_password: "Change my password"
   sessions:
     new:
       title: "Log in"
@@ -248,6 +249,9 @@ en:
       new:
         forgot_password: "Forgot your password?"
         send_me_reset: "Send me reset password instructions"
+        title: "Forgot your password?"
+      edit:
+        title: "Reset password"
   chart:
     filter:
       period_time: "Period Time"

@@ -1,0 +1,8 @@
+id,user_id,msg,link,read,created_at,updated_at
+170,56,Welecome to Report Working App,/users/56,read,2022-08-11 07:19:51 UTC,2022-08-11 07:19:59 UTC
+172,58,Welecome to Report Working App,/users/58,read,2022-08-11 07:22:19 UTC,2022-08-11 07:41:49 UTC
+173,56,You was added to IT department,/departments/102,read,2022-08-11 07:44:18 UTC,2022-08-11 07:46:27 UTC
+174,58,You was added to IT department,/departments/102,read,2022-08-11 07:44:18 UTC,2022-08-11 07:49:30 UTC
+175,58,You was received a report,/reports/10,read,2022-08-11 07:50:38 UTC,2022-08-11 07:52:17 UTC
+176,56,Let is create to day report of IT department,/en/departments/102,unread,2022-08-11 08:07:04 UTC,2022-08-11 08:07:04 UTC
+177,58,Let is create to day report of IT department,/en/departments/102,read,2022-08-11 08:07:04 UTC,2022-08-11 08:07:58 UTC

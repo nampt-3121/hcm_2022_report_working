@@ -53,7 +53,7 @@ class ApplicationController < ActionController::Base
   def load_notifies
     return unless current_user
 
-    @notifications = current_user.notifies.limit Settings.config.notifies_size
+    @notifications = current_user.notifies.recent.limit Settings.config.notifies_size
   end
 
   def access_denied

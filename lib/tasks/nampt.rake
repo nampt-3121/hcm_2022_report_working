@@ -35,6 +35,13 @@ namespace :nampt do
   end
 end
 
+namespace :nampt do
+  desc "Remove all data in db"
+  task remove_all: :environment do
+    remove_database
+  end
+end
+
 EXCEPT = %i(ActiveStorageAttachment ActiveStorageBlob
             ArInternalMetadatum SchemaMigration).freeze
 

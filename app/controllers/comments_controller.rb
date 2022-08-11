@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     else
       flash[:danger] = t ".create_comment_error"
     end
-    redirect_to report_path(@comment.report_id)
+    redirect_back(fallback_location: root_path)
   end
 
   def update
@@ -26,7 +26,7 @@ class CommentsController < ApplicationController
     else
       flash[:danger] = t ".delete_failed_message"
     end
-    redirect_to report_path(@comment.report_id)
+    redirect_back(fallback_location: root_path)
   end
 
   private

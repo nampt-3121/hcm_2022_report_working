@@ -36,7 +36,7 @@ RSpec.describe ReportsController, type: :controller do
             sign_in user
             params = {
               filter: {
-                id: report_1.id,
+                id_eq: report_1.id,
                 department: nil,
                 name: nil,
                 date_created: nil,
@@ -152,7 +152,7 @@ RSpec.describe ReportsController, type: :controller do
         end
 
         it "redirect to root path" do
-          expect(response).to redirect_to root_path
+          expect(response).to redirect_to reports_path
         end
       end
 

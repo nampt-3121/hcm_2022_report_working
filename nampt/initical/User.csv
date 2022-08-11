@@ -1,0 +1,3 @@
+id,phone,full_name,role,created_at,updated_at,email,encrypted_password,reset_password_token,reset_password_sent_at,remember_created_at,confirmation_token,confirmed_at,confirmation_sent_at,unconfirmed_email,failed_attempts,unlock_token,locked_at
+56,0326222333,Admin User,admin,2022-08-11 07:19:51 UTC,2022-08-11 07:19:51 UTC,test@gmail.com,$2a$12$9XmVpf2e6Ut8rmwR6h3SqOKCMi2IakFkSMljaI6FXnaa/k.S.M7Ja,,,,,,,,0,,
+58,,Pham Thanh Nam,normal,2022-08-11 07:22:19 UTC,2022-08-11 07:41:46 UTC,phamnaminter@gmail.com,$2a$12$x2NU91d07pgoVyiICGvnRu8XCa/mLtWDzrKDgMfAT4GOWPbZlEw32,,,,,,,,0,,

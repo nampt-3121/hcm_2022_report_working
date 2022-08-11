@@ -18,7 +18,6 @@ class User < ApplicationRecord
 
   before_save :downcase_email
   after_create :notify_create
-  after_update :notify_update
 
   enum role: {normal: 0, admin: 1}
 
@@ -57,7 +56,7 @@ class User < ApplicationRecord
   end
 
   def join_department department
-    departments << department
+    departments << department unless departments.include? department
   end
 
   def leave_department department
@@ -72,11 +71,6 @@ class User < ApplicationRecord
 
   def notify_create
     create_notify id, I18n.t("welecome_create"),
-                  routes.user_path(id: id)
-  end
-
-  def notify_update
-    create_notify id, I18n.t("update_profile"),
                   routes.user_path(id: id)
   end
 end

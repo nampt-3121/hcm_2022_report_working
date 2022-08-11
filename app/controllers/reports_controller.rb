@@ -10,7 +10,7 @@ class ReportsController < ApplicationController
   def index; end
 
   def show
-    @comments = @report.comments.sort_created_at
+    @comments = @report.comments.includes([:user]).sort_created_at
     @comment = @report.comments.build
   end
 
@@ -22,7 +22,7 @@ class ReportsController < ApplicationController
   def create
     if @report.save
       flash[:success] = t ".create_report_message"
-      redirect_to root_path
+      redirect_to reports_path
     else
       flash.now[:danger] = t ".create_report_error"
       render :new
@@ -56,7 +56,7 @@ class ReportsController < ApplicationController
     else
       flash[:danger] = t ".update_failure"
     end
-    redirect_to root_path
+    redirect_to reports_path
   end
 
   private
@@ -75,7 +75,7 @@ class ReportsController < ApplicationController
 
   def paginate_reports
     @filter = Report.accessible_by(current_ability).ransack(params[:filter])
-    @pagy, @reports = pagy @filter.result.includes(:department, :from_user), items: Settings.report.per_page
+    @pagy, @reports = pagy @filter.result.includes(:department, :from_user)
   end
 
   def check_ownership
