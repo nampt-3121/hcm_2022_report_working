@@ -41,22 +41,8 @@ class Report < ApplicationRecord
     end
   end)
 
-  scope :by_name, (lambda do |name|
-    if name.present?
-      Report.joins(:from_user).where("full_name LIKE (?)", "%#{name}%")
-    end
-  end)
-
-  scope :by_id, (lambda do |id|
-    where(id: id) if id.present?
-  end)
-
   scope :by_created_at, (lambda do |created_at|
     where(created_at: created_at) if created_at.present?
-  end)
-
-  scope :by_report_date, (lambda do |report_date|
-    where(report_date: report_date) if report_date.present?
   end)
 
   scope :for_manager, (lambda do |department_id|

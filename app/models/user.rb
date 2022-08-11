@@ -46,14 +46,6 @@ class User < ApplicationRecord
 
   scope :sort_created_at, ->{order :created_at}
 
-  scope :by_email, (lambda do |email|
-    where(["email LIKE (?)", "%#{email}%"]) if email.present?
-  end)
-
-  scope :by_full_name, (lambda do |name|
-    where(["full_name LIKE (?)", "%#{name}%"]) if name.present?
-  end)
-
   scope :not_in_department, (lambda do |department_id|
     User.where("NOT EXISTS( SELECT user_id from `relationships` as re where
       re.user_id = users.id and department_id = '#{department_id}' )")

@@ -10,8 +10,8 @@ class RelationshipsController < ApplicationController
   end
 
   def create
-    insert relationship_params[:department],
-           relationship_params[:user_id]
+    Relationship.insert relationship_params[:department],
+                        relationship_params[:user_id]
 
     flash[:info] = t "autd_success"
     redirect_back(fallback_location: root_path)
@@ -57,31 +57,11 @@ class RelationshipsController < ApplicationController
   end
 
   def paginate_users
-    @pagy, @users = pagy filter_user
-  end
-
-  def filter_user
-    return User.all unless params[:filter]
-
-    @users = User.by_email(params[:filter][:email_search])
-                 .by_full_name(params[:filter][:full_name_search])
+    @filter = User.ransack(params[:filter])
+    @pagy, @users = pagy @filter.result
   end
 
   def relationship_params
     params.require(:relationship).permit Relationship::UPDATEABLE_ATTRS
-  end
-
-  def insert departments, users
-    ActiveRecord::Base.transaction do
-      departments.each do |department_id|
-        next if department_id.blank?
-
-        users.each do |user_id|
-          user = User.find(user_id)
-          department = Department.find(department_id)
-          user.join_department department
-        end
-      end
-    end
   end
 end

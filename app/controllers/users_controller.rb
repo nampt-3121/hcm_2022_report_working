@@ -64,17 +64,8 @@ class UsersController < ApplicationController
   end
 
   def paginate_users
-    @pagy, @users = pagy filter_user, items: Settings.user.per_page
-  end
-
-  def filter_user
-    unless params[:filter]
-      return User.includes([:avatar_attachment]).sort_created_at
-    end
-
-    @users = User.by_email(params[:filter][:email_search])
-                 .by_full_name(params[:filter][:full_name_search])
-                 .sort_created_at
+    @filter = User.ransack(params[:filter])
+    @pagy, @users = pagy @filter.result
   end
 
   def save_avatar
