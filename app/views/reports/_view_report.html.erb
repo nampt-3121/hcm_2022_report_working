@@ -1,5 +1,7 @@
 <%= form_for @report do |f| %>
   <%= render "shared/error_messages", object: @report %>
+  <%= f.label :department %>
+  <%= f.text_field :name, class: "form-control", disabled: true %>
   <%= f.label :report_date %>
   <%= f.date_field :report_date, class: "form-control", disabled: true %>
   <%= f.label :today_plan %>

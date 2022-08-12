@@ -148,7 +148,7 @@ end
 def remove_database
   models = get_all_ins_model(get_all_table)
   models.each do |model|
-    puts "Delete record of tabler: #{model.name}"
+    puts "Delete record of table: #{model.name}"
     model.destroy_all
   end
 end
