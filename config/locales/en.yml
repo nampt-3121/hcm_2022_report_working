@@ -45,7 +45,7 @@ en:
   pending_message: "Add user to department is in progress. Please wait..."
   autd_success: "Add User To Department Success. Please check it work correctly!!!"
   autd_failure: "Add User To Department Failure. please try again !!!"
-  remind_job_msg: "Let is create to day report of %{department_name}"
+  remind_job_msg: "Let is create today report of %{department_name}"
   change_my_password: "Change my password"
   choose_department: "Please choose a department"
   sessions:

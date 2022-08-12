@@ -1,0 +1,50 @@
+id,user_id,msg,link,read,created_at,updated_at
+170,56,Welecome to Report Working App,/users/56,read,2022-08-11 07:19:51 UTC,2022-08-11 07:19:59 UTC
+172,58,Welecome to Report Working App,/users/58,read,2022-08-11 07:22:19 UTC,2022-08-11 07:41:49 UTC
+173,56,You was added to IT department,/departments/102,read,2022-08-11 07:44:18 UTC,2022-08-11 07:46:27 UTC
+174,58,You was added to IT department,/departments/102,read,2022-08-11 07:44:18 UTC,2022-08-11 07:49:30 UTC
+175,58,You was received a report,/reports/10,read,2022-08-11 07:50:38 UTC,2022-08-11 07:52:17 UTC
+176,56,Let is create to day report of IT department,/en/departments/102,read,2022-08-11 08:07:04 UTC,2022-08-11 15:18:43 UTC
+177,58,Let is create to day report of IT department,/en/departments/102,read,2022-08-11 08:07:04 UTC,2022-08-11 08:07:58 UTC
+5502,56,One or more comments was added,/reports/1,read,2022-08-11 15:07:06 UTC,2022-08-11 15:18:40 UTC
+5503,56,One or more comments was added,/reports/1,read,2022-08-11 15:07:06 UTC,2022-08-11 15:18:37 UTC
+5504,56,You was received a report,/reports/1,read,2022-08-11 15:07:06 UTC,2022-08-11 15:12:30 UTC
+5505,106,Welecome to Report Working App,/users/106,read,2022-08-11 16:26:06 UTC,2022-08-11 16:31:34 UTC
+5506,107,Welecome to Report Working App,/users/107,unread,2022-08-11 16:26:25 UTC,2022-08-11 16:26:25 UTC
+5507,106,You was added to IT department,/departments/102,read,2022-08-11 16:27:17 UTC,2022-08-11 16:31:32 UTC
+5508,107,You was added to IT department,/departments/102,unread,2022-08-11 16:27:17 UTC,2022-08-11 16:27:17 UTC
+5509,56,You was added to Phong ke toan,/departments/103,read,2022-08-11 16:27:17 UTC,2022-08-11 16:37:20 UTC
+5510,58,You was added to Phong ke toan,/departments/103,read,2022-08-11 16:27:17 UTC,2022-08-11 16:30:32 UTC
+5511,106,You was added to Phong ke toan,/departments/103,read,2022-08-11 16:27:17 UTC,2022-08-11 16:31:30 UTC
+5512,107,You was added to Phong ke toan,/departments/103,unread,2022-08-11 16:27:17 UTC,2022-08-11 16:27:17 UTC
+5513,106,You was added to IT department,/departments/102,read,2022-08-12 02:38:58 UTC,2022-08-12 05:45:34 UTC
+5514,56,Let is create to day report of IT department,/en/departments/102,read,2022-08-12 05:23:33 UTC,2022-08-12 05:31:09 UTC
+5515,58,Let is create to day report of IT department,/en/departments/102,read,2022-08-12 05:23:33 UTC,2022-08-12 05:42:37 UTC
+5516,107,Let is create to day report of IT department,/en/departments/102,unread,2022-08-12 05:23:33 UTC,2022-08-12 05:23:33 UTC
+5517,106,Let is create to day report of IT department,/en/departments/102,read,2022-08-12 05:23:33 UTC,2022-08-12 05:45:30 UTC
+5518,56,Let is create to day report of Phong ke toan,/en/departments/103,read,2022-08-12 05:23:33 UTC,2022-08-12 05:31:11 UTC
+5519,58,Let is create to day report of Phong ke toan,/en/departments/103,read,2022-08-12 05:23:33 UTC,2022-08-12 05:42:39 UTC
+5520,106,Let is create to day report of Phong ke toan,/en/departments/103,read,2022-08-12 05:23:33 UTC,2022-08-12 05:45:33 UTC
+5521,107,Let is create to day report of Phong ke toan,/en/departments/103,unread,2022-08-12 05:23:33 UTC,2022-08-12 05:23:33 UTC
+5522,56,Let is create to day report of IT department,/en/departments/102,unread,2022-08-12 05:49:01 UTC,2022-08-12 05:49:01 UTC
+5523,58,Let is create to day report of IT department,/en/departments/102,unread,2022-08-12 05:49:01 UTC,2022-08-12 05:49:01 UTC
+5524,107,Let is create to day report of IT department,/en/departments/102,unread,2022-08-12 05:49:01 UTC,2022-08-12 05:49:01 UTC
+5525,106,Let is create to day report of IT department,/en/departments/102,read,2022-08-12 05:49:01 UTC,2022-08-12 05:53:16 UTC
+5526,56,Let is create to day report of Phong ke toan,/en/departments/103,unread,2022-08-12 05:49:01 UTC,2022-08-12 05:49:01 UTC
+5527,58,Let is create to day report of Phong ke toan,/en/departments/103,unread,2022-08-12 05:49:01 UTC,2022-08-12 05:49:01 UTC
+5528,106,Let is create to day report of Phong ke toan,/en/departments/103,read,2022-08-12 05:49:01 UTC,2022-08-12 05:53:15 UTC
+5529,107,Let is create to day report of Phong ke toan,/en/departments/103,unread,2022-08-12 05:49:01 UTC,2022-08-12 05:49:01 UTC
+5530,108,Welecome to Report Working App,/users/108,unread,2022-08-12 05:57:24 UTC,2022-08-12 05:57:24 UTC
+5531,108,You was added to IT department,/departments/102,unread,2022-08-12 05:58:23 UTC,2022-08-12 05:58:23 UTC
+5532,56,You was added to Phong marketing,/departments/104,unread,2022-08-12 05:58:51 UTC,2022-08-12 05:58:51 UTC
+5533,58,You was added to Phong marketing,/departments/104,unread,2022-08-12 05:58:51 UTC,2022-08-12 05:58:51 UTC
+5534,106,You was added to Phong marketing,/departments/104,unread,2022-08-12 05:58:51 UTC,2022-08-12 05:58:51 UTC
+5535,107,You was added to Phong marketing,/departments/104,unread,2022-08-12 05:58:51 UTC,2022-08-12 05:58:51 UTC
+5536,108,You was added to Phong marketing,/departments/104,unread,2022-08-12 05:58:51 UTC,2022-08-12 05:58:51 UTC
+5537,108,You was added to Phong ke toan,/departments/103,unread,2022-08-12 06:00:15 UTC,2022-08-12 06:00:15 UTC
+5538,58,You was added to Phong marketing,/departments/104,unread,2022-08-12 06:01:54 UTC,2022-08-12 06:01:54 UTC
+5539,56,You was added to alo 1223,/departments/105,unread,2022-08-12 06:01:54 UTC,2022-08-12 06:01:54 UTC
+5540,58,You was added to alo 1223,/departments/105,unread,2022-08-12 06:01:54 UTC,2022-08-12 06:01:54 UTC
+5541,106,You was added to alo 1223,/departments/105,unread,2022-08-12 06:01:54 UTC,2022-08-12 06:01:54 UTC
+5542,107,You was added to alo 1223,/departments/105,unread,2022-08-12 06:01:54 UTC,2022-08-12 06:01:54 UTC
+5543,108,You was added to alo 1223,/departments/105,unread,2022-08-12 06:01:54 UTC,2022-08-12 06:01:54 UTC

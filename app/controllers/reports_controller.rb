@@ -33,7 +33,7 @@ class ReportsController < ApplicationController
   def edit; end
 
   def update
-    if @report.update report_params.merge department_id: @department.first.id
+    if @report.update report_params.merge department_id: @department.id
       flash[:success] = t ".edit_success_message"
       redirect_to department_reports_path(@report.department_id)
     else
@@ -101,7 +101,7 @@ class ReportsController < ApplicationController
   end
 
   def prepare_report
-    @report = @department.first.reports.build report_params
+    @report = @department.reports.build report_params
               .merge from_user_id: current_user.id
   end
 

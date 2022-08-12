@@ -18,7 +18,7 @@
     <% @notifications&.each do |notification| %>
     <a class="dropdown-item d-flex align-items-center" href="<%= notify_path notification.id %>">
       <div>
-        <div class="small text-gray-500"><%= notification.created_at %></div>
+        <div class="small text-gray-500"><%= time_ago_in_words notification.created_at %></div>
         <% if notification.read? %>
           <%= notification.msg %>
         <% else %>
