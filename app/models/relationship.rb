@@ -23,6 +23,8 @@ class Relationship < ApplicationRecord
   end
 
   def self.insert departments, users
+    return if departments.blank? || users.blank?
+
     ActiveRecord::Base.transaction do
       departments.each do |department_id|
         next if department_id.blank?

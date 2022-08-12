@@ -47,6 +47,7 @@ en:
   autd_failure: "Add User To Department Failure. please try again !!!"
   remind_job_msg: "Let is create to day report of %{department_name}"
   change_my_password: "Change my password"
+  choose_department: "Please choose a department"
   sessions:
     new:
       title: "Log in"

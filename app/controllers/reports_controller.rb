@@ -67,7 +67,14 @@ class ReportsController < ApplicationController
   end
 
   def find_department
-    @department = Department.find params[:department_id]
+    @department = Department.find_by params[:department_id]
+    return if @department
+
+    find_accessible_department
+    @report = Report.new
+    @report.comments.build
+    flash.now[:danger] = t "choose_department"
+    render :new
   end
 
   def find_report
