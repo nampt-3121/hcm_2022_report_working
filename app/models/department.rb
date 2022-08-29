@@ -30,7 +30,8 @@ class Department < ApplicationRecord
 
   def display_avatar width = Settings.gravatar.width_default,
     height = Settings.gravatar.height_default
-    avatar.variant resize_to_limit: [width, height]
+    debugger
+    avatar.variant(resize_to_limit: [width, height]).processed
   end
 
   def add_user user

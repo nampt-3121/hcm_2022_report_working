@@ -4,7 +4,9 @@ class UsersController < ApplicationController
   before_action :find_user, except: %i(index new create)
   before_action :check_empty_pw, only: :update
 
-  def index; end
+  def index
+    debugger
+  end
 
   def show
     @pagy, @departments = pagy @user.departments,
@@ -18,7 +20,6 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
-      save_avatar
       flash[:success] = t ".create_user_message"
       redirect_to root_path
     else
