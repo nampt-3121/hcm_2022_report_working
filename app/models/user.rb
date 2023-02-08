@@ -68,7 +68,6 @@ class User < ApplicationRecord
 
   def display_avatar width = Settings.gravatar.width_default,
     height = Settings.gravatar.height_default
-    debugger
     avatar.variant(resize_to_limit: [width, height]).processed
   end
 
